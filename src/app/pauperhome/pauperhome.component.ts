@@ -23,12 +23,12 @@ export class PauperhomeComponent implements OnInit {
   getPauperPosts():void{
     this.postapiService.getPauper().subscribe(
       (response:any) =>{
-        response.data.children.forEach((p: { data: { title: any; thumbnail: any; permalink: any; }; }) =>{
+        response.data.children.forEach((p: { data: { title: any; thumbnail: any; url_overridden_by_dest: any; }; }) =>{
           let newPost: Post = {
             title :p.data.title,
             image:p.data.thumbnail,
-            link:p.data.permalink,
-            //link:p.data.url  This one is also working 
+            // link:p.data.permalink,
+            link:p.data.url_overridden_by_dest,
           }
           this.posts.push(newPost);
         });

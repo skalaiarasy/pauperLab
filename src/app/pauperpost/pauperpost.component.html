@@ -1,9 +1,9 @@
 <div>
-    <h2>Title:{{ pauper.title }}</h2>
-    <!-- <h2>Image:{{ pauper.image }}</h2> -->
-    <img [src] = " pauper.image ">
-    <!-- <a [attr.href] = "'//' + pauper.link" ></a> -->
-    <!-- <a [attr.href]="'//' + candidate.url" target="_blank" [title]="candidate.url"></a> -->
-    <h2>URL Link:{{ pauper.link }} </h2>
-    
+    <h2>Title</h2>
+    <h3>{{ pauper.title }}</h3>
+    <img [src]=" pauper.image " >
+    <div><a [href]=" pauper.link " target="_blank">Click here to visit me</a>
+    </div>  
+
+
 </div>
