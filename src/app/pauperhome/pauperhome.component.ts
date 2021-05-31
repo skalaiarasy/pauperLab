@@ -23,11 +23,12 @@ export class PauperhomeComponent implements OnInit {
   getPauperPosts():void{
     this.postapiService.getPauper().subscribe(
       (response:any) =>{
-        this.posts = response.data.children.forEach((p: { data: { title: any; thumbnail: any; url: any; }; }) =>{
+        response.data.children.forEach((p: { data: { title: any; thumbnail: any; permalink: any; }; }) =>{
           let newPost: Post = {
             title :p.data.title,
             image:p.data.thumbnail,
-            link:p.data.url,
+            link:p.data.permalink,
+            //link:p.data.url  This one is also working 
           }
           this.posts.push(newPost);
         });
@@ -35,5 +36,4 @@ export class PauperhomeComponent implements OnInit {
       }
     )
   }
-
 }

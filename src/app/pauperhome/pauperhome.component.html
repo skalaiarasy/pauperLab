@@ -1,3 +1,10 @@
 <h1>This is the Pauper Lab</h1>
-<app-pauperpost [pauper]="post" *ngFor="let post of posts"></app-pauperpost>
+<!-- To display entire rows -->
+<!-- <app-pauperpost [pauper]="post" *ngFor="let post of posts" index as i ></app-pauperpost> -->
+<!-- limit to display 10 rows -->
+<app-pauperpost [pauper]="post" *ngFor="let post of posts.slice(0,10)" ></app-pauperpost>
+<!-- To didplay 10 rows another way -->
+<!-- <app-pauperpost [pauper]="post" *ngFor="let post of posts | slice:0:10" ></app-pauperpost> -->
+
+
 
